@@ -41,7 +41,9 @@ public class AddressBook {
                 writer.newLine();
             }
             writer.close();
-            System.out.println("Contactos guardados exitosamente.");
+            System.out.println("+------------------------------------+");
+            System.out.println("|  Contactos guardados exitosamente  |");
+            System.out.println("+------------------------------------+");
         } catch (IOException e) {
             System.out.println("Error al guardar los contactos: " + e.getMessage());
         }
@@ -58,7 +60,7 @@ public class AddressBook {
             for (Map.Entry<String, String> entry : contactos.entrySet()) {
                 String numeroTelefono = entry.getKey();
                 String nombre = entry.getValue();
-                System.out.println("|        " + numeroTelefono + "," + nombre + "             |");
+                System.out.println("|        " + numeroTelefono + ": " + nombre + "            |");
             }
             System.out.println("+------------------------------------+");
         }
@@ -82,7 +84,7 @@ public class AddressBook {
         if (nombre != null) {
             System.out.println("+------------------------------------+");
             System.out.println("|       Contacto eliminado:          |");
-            System.out.println("|        " + nombre + "," + numeroTelefono + "             |");
+            System.out.println("|        " + nombre + ": " + numeroTelefono + "            |");
             System.out.println("+------------------------------------+");
         } else {
             System.out.println("+------------------------------------+");
@@ -98,7 +100,7 @@ public class AddressBook {
             String nombreContacto = entry.getValue();
             if (nombreContacto.equalsIgnoreCase(nombre)) {
                 System.out.println("+------------------------------------+");
-                System.out.println("|        " + numeroTelefono + "," + nombreContacto + "             |");
+                System.out.println("|        " + numeroTelefono + ": " + nombreContacto + "            |");
                 System.out.println("+------------------------------------+");
                 found = true;
             }
